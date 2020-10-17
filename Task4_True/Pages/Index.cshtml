@@ -1,0 +1,37 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Users Database</h1>
+    <p>Here u can delete other users.</p>
+</div>
+<button class="btn btn-danger">Block</button>
+<button class="btn btn-success">Unblock</button>
+<button class="btn btn-dark">Delete</button>
+    <div class="table">
+        <table class="table">
+            <thead>
+                <tr> 
+                    <th scope="col">Id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">LastVisit</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                @foreach (var user in Model.users) {
+                <tr>
+                    
+                    <th class="row">@user.Id</th>
+                    <td>@user.Name</td>
+                    <td>@user.email</td>
+                </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
