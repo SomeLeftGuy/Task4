@@ -21,7 +21,7 @@ namespace Task4_True.Pages.Models
         public string Name { get; set; }
         public string Number { get; set; }
         [Display(Name ="Password")]
-        public string Password { get; private set;}
+        public string Password { get; set;}
         public override string ToString() => JsonSerializer.Serialize<User>(this);
     }
  
