@@ -6,11 +6,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using Task4_True.Pages.Models;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
-using System.Linq;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace Task4_True.Control
 {
@@ -49,11 +44,9 @@ namespace Task4_True.Control
             return await Users.Find(new BsonDocument("_id", new ObjectId(id))).FirstOrDefaultAsync();
         }
         // добавление документа
-        public async Task<Microsoft.AspNet.Identity.IdentityResult> Create(User p)
+        public async Task Create(User p)
         {
-            
-            return await Users.InsertOneAsync(p) ;
-            
+            await Users.InsertOneAsync(p);
         }
         // обновление документа
         public async Task Update(User p)
